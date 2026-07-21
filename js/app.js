@@ -79,3 +79,5 @@ export function getApplicationState() {
     currentPanel
   };
 }
+
+start();
