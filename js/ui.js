@@ -2,7 +2,7 @@
  * UI Module
  * 
  * Purpose: Manage interface rendering and visual updates.
- * Responsibilities: Render application interface, update visible panels, 
+ * Responsibilities: Render application interface, update visible s, 
  * create reusable UI elements, display messages and status changes.
  */
 
@@ -16,25 +16,22 @@
 /**
  * Renders content into the main panel.
  * 
- * @param {HTMLElement|string} panelContent - The content to render (DOM node or HTML string).
+ * @param {HTMLElement|string} Content - The content to render (DOM node or HTML string).
  * @returns {HTMLElement|null} The updated panel element.
  */
-export function renderPanel(panelContent) {
-  const panel = document.getElementById('main-panel');
-  if (!panel) return null;
+export function render(content, container) {
+  // 1. Clear current 
+  container.innerHTML = '';
 
-  // 1. Clear current panel
-  panel.innerHTML = '';
-
-  // 2. Insert new panel content
-  if (typeof panelContent === 'string') {
-    panel.innerHTML = panelContent;
-  } else if (panelContent instanceof Node) {
-    panel.appendChild(panelContent);
+  // 2. Insert new  content
+  if (typeof containerContent === 'string') {
+    container.innerHTML = containerContent;
+  } else if (containerContent instanceof Node) {
+    container.appendChild(containerContent);
   }
 
   // 3. Update displayed interface (handled by DOM reflow)
-  return panel;
+  return container;
 }
 
 /**
