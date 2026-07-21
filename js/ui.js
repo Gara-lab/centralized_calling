@@ -19,6 +19,10 @@
  * @param {HTMLElement|string} Content - The content to render (DOM node or HTML string).
  * @returns {HTMLElement|null} The updated panel element.
  */
+if (!container) {
+  return null;
+}
+
 export function render(content, container) {
   // 1. Clear current 
   container.innerHTML = '';
