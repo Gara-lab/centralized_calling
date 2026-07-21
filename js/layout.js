@@ -118,9 +118,17 @@ const Layout = (function () {
    */
   function renderHeader() {
     // 1. Retrieve current user information and status from Storage
-    const user = Storage.getUser();
-    const status = Storage.getUserStatus();
-    const task = Storage.getCurrentTask();
+    const session = Storage.getState('session');
+
+    const user = session.userId
+      ? { name: session.userId }
+      : null;
+
+    const status = session.isLoggedIn
+      ? 'Available'
+      : 'Offline';
+
+    const task = null;
 
     // 3. Create header DOM element
     const headerElement = document.createElement('div');
