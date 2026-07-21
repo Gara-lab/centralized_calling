@@ -80,6 +80,17 @@ export function start() {
       Queue.render(undefined, data.container);
       break;
   }
+  Events.on('contact:view', (data) => {
+  console.log('View contact:', data.id);
+});
+
+  Events.on('contact:edit', (data) => {
+  console.log('Edit contact:', data.id);
+});
+
+  Events.on('contact:delete', (data) => {
+  console.log('Delete contact:', data.id);
+});
 });
   Layout.initialize();
 }
