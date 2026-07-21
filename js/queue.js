@@ -5,7 +5,7 @@
  * Dependencies: Storage, UI, Events
  */
 
-import * as Storage from './storage.js';
+import Storage from './storage.js';
 import * as UI from './ui.js';
 import * as Events from './events.js';
 
