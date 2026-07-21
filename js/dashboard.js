@@ -1,8 +1,8 @@
 // dashboard.js
 
-import Storage from './storage.js';
-import UI from './ui.js';
-import Events from './events.js';
+import * as Storage from './storage.js';
+import * as UI from './ui.js';
+import * as Events from './events.js';
 
 /**
  * Loads the required raw dashboard data from the Storage module.
