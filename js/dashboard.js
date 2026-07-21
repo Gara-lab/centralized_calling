@@ -93,5 +93,5 @@ export function render(dashboardData) {
   `;
   
   // 3. Send content to UI module.
-  UI.update('dashboard-container', dashboardHTML);
+  UI.render(dashboardHTML, document.getElementById('panel-dashboard'));
 }
