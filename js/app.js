@@ -46,7 +46,7 @@ export function start() {
  */
 export function changePanel(panel) {
   // 1 & 2. Receive requested panel and notify UI to render it
-  UI.render(panel);
+  UI.render(panel, container);
   
   // 3. Update current application panel state
   currentPanel = panel;
