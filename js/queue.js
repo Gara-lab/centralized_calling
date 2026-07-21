@@ -83,7 +83,7 @@ function render(queueData) {
 
   if (!queueData || queueData.length === 0) {
     panel.innerHTML = '<p class="queue-empty">No contacts in queue.</p>';
-    UI.render(panel);
+    UI.render(panel, container);
     return panel;
   }
 
@@ -106,7 +106,7 @@ function render(queueData) {
   panel.appendChild(list);
   
   // Send content to UI module
-  UI.render(panel);
+  UI.render(panel, container);
 
   return panel;
 }
