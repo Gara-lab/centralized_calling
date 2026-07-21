@@ -24,10 +24,10 @@ export function render(content, container) {
   container.innerHTML = '';
 
   // 2. Insert new  content
-  if (typeof containerContent === 'string') {
-    container.innerHTML = containerContent;
+  if (typeof Content === 'string') {
+    container.innerHTML = Content;
   } else if (containerContent instanceof Node) {
-    container.appendChild(containerContent);
+    container.appendChild(Content);
   }
 
   // 3. Update displayed interface (handled by DOM reflow)
