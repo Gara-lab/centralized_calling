@@ -25,8 +25,8 @@ function loadDashboardData() {
  */
 function prepareDashboardContent(rawData) {
   return {
-    user: rawData.session.user || 'Guest',
-    sessionId: rawData.session.id || 'N/A',
+    user: rawData.session.userId || 'Guest',
+    sessionId: rawData.session.token || 'N/A',
     activeTasks: rawData.operations.activeTasks || 0,
     pendingCalls: rawData.operations.pendingCalls || 0,
     lastRefresh: new Date().toLocaleTimeString()
