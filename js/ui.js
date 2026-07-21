@@ -12,30 +12,6 @@
  * 
  * @returns {HTMLElement} The rendered main interface container.
  */
-export function initialize() {
-  // 1. Create main interface containers
-  const appContainer = document.createElement('div');
-  appContainer.id = 'app';
-  appContainer.className = 'app-container';
-
-  const mainPanel = document.createElement('main');
-  mainPanel.id = 'main-panel';
-  mainPanel.className = 'panel';
-
-  const messageContainer = document.createElement('div');
-  messageContainer.id = 'message-container';
-  messageContainer.className = 'message-container';
-  messageContainer.setAttribute('aria-live', 'polite');
-
-  // 2. Prepare UI structure
-  appContainer.appendChild(mainPanel);
-  appContainer.appendChild(messageContainer);
-
-  // 3. Display default interface
-  document.body.appendChild(appContainer);
-
-  return appContainer;
-}
 
 /**
  * Renders content into the main panel.
