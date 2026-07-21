@@ -88,7 +88,7 @@ export function render(callData) {
 
   if (!data) {
     panel.innerHTML = '<p class="call-panel__empty">No active call</p>';
-    UI.updatePanel(panel);
+    UI.render(panel, document.getElementById('panel-calls'));
     return;
   }
 
@@ -104,7 +104,7 @@ export function render(callData) {
     <div class="call-panel__duration">Duration: ${elapsed}</div>
   `;
 
-  UI.updatePanel(panel);
+  UI.render(panel, document.getElementById('panel-calls'));
 }
 
 // ---------------------------------------------------------------------------
