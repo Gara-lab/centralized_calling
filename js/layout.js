@@ -2,17 +2,6 @@ import * as UI from './ui.js';
 import * as Events from './events.js';
 import * as Storage from './storage.js';
 
-export function initialize() {
-  createLayoutContainer();
-  renderHeader();
-  renderSidebar();
-
-  Events.on('user:statusChanged', updateHeader);
-  Events.on('panel:changed', openPanel);
-
-  openPanel('dashboard');
-}
-
 const Layout = (function () {
   // ==========================================
   // Internal State
@@ -233,3 +222,5 @@ const Layout = (function () {
     updateHeader
   };
 })();
+
+export default Layout;
