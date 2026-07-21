@@ -26,7 +26,7 @@ export function createContact(data) {
   }
 
   // 2. Send data to Storage
-  const newContact = Storage.addContact(data);
+  const newContact = Storage.addEntity('contacts', data);
 
   // 3. Emit contact created event
   Events.emit('contact:created', newContact);
@@ -46,7 +46,7 @@ export function createContact(data) {
  */
 export function updateContact(id, changes) {
   // 1. Send update request to Storage
-  const updatedContact = Storage.updateContact(id, changes);
+  const updatedContact = Storage.updateEntity('contacts', id, changes);
 
   // 2. Emit contact updated event
   Events.emit('contact:updated', updatedContact);
@@ -65,7 +65,7 @@ export function updateContact(id, changes) {
  */
 export function deleteContact(id) {
   // 1. Send removal request to Storage
-  const result = Storage.deleteContact(id);
+  const result = Storage.removeEntity('contacts', id);
 
   // 2. Emit contact removed event
   Events.emit('contact:removed', id);
@@ -103,13 +103,13 @@ export function searchContacts(query) {
 }
 
 /**
- * Renders the contacts panel and sends it to the UI module.
+ *
  * @param {Array} [contacts] - Optional contact data to render. Defaults to all contacts.
  */
-export function render(contacts) {
+export function render(contacts, container) {
   const contactList = contacts || getContacts();
   
-  // 1. Create contact panel
+  //
   const panel = document.createElement('section');
   panel.className = 'contacts-panel';
   panel.setAttribute('aria-label', 'Contacts List');
@@ -144,5 +144,5 @@ export function render(contacts) {
   }
 
   // 2. Send content to UI module
-  UI.render(panel);
+  UI.render(panel, container);
 }
