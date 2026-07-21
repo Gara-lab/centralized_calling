@@ -8,7 +8,7 @@ import * as Events from './events.js';
  * @returns {Array} List of contacts.
  */
 export function getContacts() {
-  return Storage.getContacts();
+  return Storage.getCollection('contacts');
 }
 
 /**
