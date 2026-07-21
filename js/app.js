@@ -1,5 +1,5 @@
 import * as Storage from './storage.js';
-import * as Events from './svents.js';
+import * as Events from './events.js';
 import * as UI from './ui.js';
 
 let applicationState = null;
