@@ -1,9 +1,6 @@
-/**
- * Layout Module
- * 
- * Manages the permanent application structure and controls the single-page workspace layout.
- * Dependencies: storage.js, ui.js, events.js
- */
+export function initialize() {
+    // layout startup code
+}
 const Layout = (function () {
   // ==========================================
   // Internal State
