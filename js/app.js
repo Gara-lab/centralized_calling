@@ -2,8 +2,10 @@ import * as Storage from './storage.js';
 import * as Events from './events.js';
 import * as UI from './ui.js';
 import Layout from './layout.js';
-
-Layout.initialize();
+import * as Dashboard from './dashboard.js';
+import * as Contacts from './contacts.js';
+import * as Calls from './calls.js';
+import Queue from './queue.js';
 
 let applicationState = null;
 let currentPanel = null;
@@ -25,19 +27,32 @@ function loadDefaultState() {
  */
 export function start() {
   // 1. Initialize workspace through Storage
-  Storage.initialize();
-  
-  // 2. Initialize Events system
-  Events.initialize();
-  
-  // 3. Initialize UI
-  UI.initialize();
+  Storage.initializeWorkspace();
   
   // 4. Load default application state
   applicationState = loadDefaultState();
   
-  // 5. Display initial panel
-  changePanel(applicationState.defaultPanel);
+  Events.on('panel:load', (data) => {
+  switch (data.panel) {
+    case 'dashboard':
+      Dashboard.render(data.container);
+      break;
+
+    case 'contacts':
+      Contacts.render(undefined, data.container);
+      break;
+
+    case 'calls':
+      Calls.render(undefined, data.container);
+      break;
+
+    case 'queue':
+      Queue.render(undefined, data.container);
+      break;
+  }
+  
+    Layout.initialize();
+});
 }
 
 /**
