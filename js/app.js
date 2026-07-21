@@ -50,9 +50,8 @@ export function start() {
       Queue.render(undefined, data.container);
       break;
   }
-  
-  Layout.initialize();
 });
+  Layout.initialize();
 }
 
 /**
