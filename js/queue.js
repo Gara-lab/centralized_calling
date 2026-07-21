@@ -77,7 +77,7 @@ function completeQueueItem(queueItemId) {
  * @param {Array} queueData - Array of queue items to display.
  * @returns {HTMLElement} The rendered queue panel element.
  */
-function render(queueData) {
+function render(queueData, container) {
   const panel = document.createElement('div');
   panel.className = 'queue-panel';
 
