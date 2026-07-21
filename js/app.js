@@ -52,6 +52,7 @@ function initializeTestData() {
 export function start() {
   // 1. Initialize workspace through Storage
   Storage.initializeWorkspace();
+  initializeTestData();
   
   // 4. Load default application state
   applicationState = loadDefaultState();
