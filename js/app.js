@@ -1,7 +1,7 @@
 import * as Storage from './storage.js';
 import * as Events from './events.js';
 import * as UI from './ui.js';
-import * as Layout from './layout.js';
+import Layout from './layout.js';
 
 Layout.initialize();
 
