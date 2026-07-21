@@ -5,9 +5,9 @@
  * Dependencies: Storage, UI, Events
  */
 
-import Storage from './storage.js';
-import UI from './ui.js';
-import Events from './events.js';
+import * as Storage from './storage.js';
+import * as UI from './ui.js';
+import * as Events from './events.js';
 
 /**
  * Retrieves the next available contact from the waiting queue.
