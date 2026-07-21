@@ -141,6 +141,18 @@ export function render(contacts, container) {
     });
 
     panel.appendChild(list);
+    panel.addEventListener('click', (event) => {
+      const button = event.target.closest('button');
+
+      if (!button) {
+      return;
+  }
+
+      const action = button.dataset.action;
+      const id = button.dataset.id;
+
+      Events.emit(`contact:${action}`, { id });
+});
   }
 
   // 2. Send content to UI module
