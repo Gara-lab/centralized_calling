@@ -22,6 +22,11 @@ function loadDefaultState() {
 }
 
 function initializeTestData() {
+  Storage.updateState('session', {
+  isLoggedIn: true,
+  userId: 'agent001',
+  token: 'test-session'
+});
   const existingContacts = Storage.getCollection('contacts');
 
   if (existingContacts.length > 0) {
