@@ -21,6 +21,30 @@ function loadDefaultState() {
   };
 }
 
+function initializeTestData() {
+  const existingContacts = Storage.getCollection('contacts');
+
+  if (existingContacts.length > 0) {
+    return;
+  }
+
+  const contact = Storage.addEntity('contacts', {
+    name: 'John Smith',
+    phone: '123456789',
+    email: 'john@example.com'
+  });
+
+  Storage.addEntity('queue', {
+    contactId: contact.id,
+    contactName: contact.name,
+    status: 'waiting'
+  });
+
+  Storage.addEntity('tasks', {
+    title: 'Follow up call',
+    status: 'pending'
+  });
+}
 /**
  * Starts the application.
  * Initializes core modules, loads default state, and displays the initial panel.
