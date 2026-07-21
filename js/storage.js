@@ -157,3 +157,5 @@ const Storage = (function () {
         resetState
     };
 })();
+
+export default Storage;
