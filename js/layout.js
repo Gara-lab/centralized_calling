@@ -1,6 +1,18 @@
+import * as UI from './ui.js';
+import * as Events from './events.js';
+import * as Storage from './storage.js';
+
 export function initialize() {
-    // layout startup code
+  createLayoutContainer();
+  renderHeader();
+  renderSidebar();
+
+  Events.on('user:statusChanged', updateHeader);
+  Events.on('panel:changed', openPanel);
+
+  openPanel('dashboard');
 }
+
 const Layout = (function () {
   // ==========================================
   // Internal State
