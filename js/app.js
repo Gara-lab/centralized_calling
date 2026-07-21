@@ -51,7 +51,7 @@ export function start() {
       break;
   }
   
-    Layout.initialize();
+  Layout.initialize();
 });
 }
 
