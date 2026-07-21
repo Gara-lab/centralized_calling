@@ -1,6 +1,6 @@
-import Storage from './storage.js';
-import Events from './svents.js';
-import UI from './ui.js';
+import * as Storage from './storage.js';
+import * as Events from './svents.js';
+import * as UI from './ui.js';
 
 let applicationState = null;
 let currentPanel = null;
