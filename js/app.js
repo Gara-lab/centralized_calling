@@ -60,7 +60,7 @@ export function start() {
   Events.on('panel:load', (data) => {
   switch (data.panel) {
     case 'dashboard':
-      Dashboard.render(data.container);
+      Dashboard.refresh();
       break;
 
     case 'contacts':
