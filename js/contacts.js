@@ -1,7 +1,7 @@
 // Dependencies
-import Storage from './storage.js';
-import UI from './ui.js';
-import Events from './events.js';
+import * as Storage from './storage.js';
+import * as UI from './ui.js';
+import * as Events from './events.js';
 
 /**
  * Retrieves all contacts from the storage module.
