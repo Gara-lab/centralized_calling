@@ -10,8 +10,11 @@ import * as Events from './events.js';
  */
 function loadDashboardData() {
   return {
-    session: Storage.get('currentSession') || {},
-    operations: Storage.get('operationalData') || {}
+    session: Storage.getState('session') || {},
+    operations: {
+      activeTasks: Storage.getCollection('tasks').length,
+      pendingCalls: Storage.getCollection('queue').length
+    }
   };
 }
 
